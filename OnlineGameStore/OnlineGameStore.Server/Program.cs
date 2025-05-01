@@ -1,4 +1,6 @@
 
+using OnlineGameStore.Server.Configuration;
+
 namespace OnlineGameStore.Server
 {
     public class Program
@@ -13,6 +15,9 @@ namespace OnlineGameStore.Server
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.AddDataBaseConnection();
+            builder.Services.RegisterServices();
 
             var app = builder.Build();
 

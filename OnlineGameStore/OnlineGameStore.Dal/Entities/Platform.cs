@@ -2,14 +2,10 @@
 
 namespace OnlineGameStore.Dal.Entities;
 
-public class Game
+public class Platform
 {
     public long Id { get; set; }
-    public string Name { get; set; }
-    public string Key { get; set; }
+    public string Type { get; set; }
 
-    public string? Description { get; set; }
-
-    public ICollection<GameGenre> GameGenres { get; set; } = new List<GameGenre>();
     public ICollection<GamePlatform> GamePlatforms { get; set; } = new List<GamePlatform>();
 }
