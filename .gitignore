@@ -398,3 +398,16 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# bo'sh papkalarni saqlash uchun
+logs/
+!logs/.gitkeep
+
+temp/
+!temp/.gitkeep
+
+cache/
+!cache/.gitkeep
+
+uploads/
+!uploads/.gitkeep
