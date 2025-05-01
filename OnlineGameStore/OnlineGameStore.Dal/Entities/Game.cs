@@ -2,5 +2,5 @@
 
 public class Game
 {
-
+    public long Id { get; set; }
 }
