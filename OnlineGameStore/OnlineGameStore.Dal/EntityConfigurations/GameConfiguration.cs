@@ -8,26 +8,20 @@ public class GameConfiguration : IEntityTypeConfiguration<Game>
 {
     public void Configure(EntityTypeBuilder<Game> builder)
     {
+        builder.ToTable("Games");
+
         builder.HasKey(g => g.Id);
 
         builder.Property(g => g.Name)
             .IsRequired()
             .HasMaxLength(100);
 
-       builder.Property(g => g.Key)
-        .IsRequired(true)
-        .HasMaxLength(100);
+        builder.HasIndex(g => g.Key);
+        builder.Property(g => g.Key)
+            .IsRequired(true);
 
         builder.Property(g => g.Description)
-        .IsRequired(true)
-        .HasMaxLength(100);
-
-        builder.HasMany(gg => gg.GameGenres)
-            .WithOne(g => g.Game)
-            .HasForeignKey(gg => gg.GameId);
-
-        builder.HasMany(gp => gp.GamePlatforms)
-            .WithOne(g => g.Game)
-            .HasForeignKey(gp => gp.GameId);
+            .IsRequired(false)
+            .HasMaxLength(255);
     }
 }

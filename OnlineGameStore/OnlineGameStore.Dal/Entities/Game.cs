@@ -10,6 +10,6 @@ public class Game
 
     public string? Description { get; set; }
 
-    public ICollection<GameGenre> GameGenres { get; set; } = new List<GameGenre>();
-    public ICollection<GamePlatform> GamePlatforms { get; set; } = new List<GamePlatform>();
+    public ICollection<GameGenre> GameGenres { get; set; }
+    public ICollection<GamePlatform> GamePlatforms { get; set; }
 }

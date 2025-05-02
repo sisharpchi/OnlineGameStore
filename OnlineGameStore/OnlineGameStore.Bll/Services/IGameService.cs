@@ -1,6 +1,5 @@
-﻿namespace OnlineGameStore.Bll.Services
+﻿namespace OnlineGameStore.Bll.Services;
+
+public interface IGameService
 {
-    public interface IGameService
-    {
-    }
 }

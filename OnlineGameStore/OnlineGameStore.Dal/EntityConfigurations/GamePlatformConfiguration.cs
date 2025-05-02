@@ -8,6 +8,8 @@ public class GamePlatformConfiguration : IEntityTypeConfiguration<GamePlatform>
 {
     public void Configure(EntityTypeBuilder<GamePlatform> builder)
     {
+        builder.ToTable("GamePlatforms");
+
         builder.HasKey(b => new { b.GameId, b.PlatformId });
 
         builder.HasOne(b => b.Game)

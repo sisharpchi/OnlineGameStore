@@ -8,14 +8,12 @@ public class PlatformConfiguration : IEntityTypeConfiguration<Platform>
 {
     public void Configure(EntityTypeBuilder<Platform> builder)
     {
+        builder.ToTable("Platforms");
+
         builder.HasKey(p => p.Id);
 
         builder.Property(p => p.Type)
             .IsRequired()
-            .HasMaxLength(100); // Optional: specify a sensible max length
-
-        builder.HasMany(p => p.GamePlatforms)
-            .WithOne(gp => gp.Platform)
-            .HasForeignKey(gp => gp.PlatformId);
+            .HasMaxLength(100);
     }
 }

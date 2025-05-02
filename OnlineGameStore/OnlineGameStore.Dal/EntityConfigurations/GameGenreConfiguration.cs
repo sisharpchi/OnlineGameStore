@@ -8,6 +8,8 @@ public class GameGenreConfiguration : IEntityTypeConfiguration<GameGenre>
 {
     public void Configure(EntityTypeBuilder<GameGenre> builder)
     {
+        builder.ToTable("GameGanres");
+
         builder.HasKey(gg => new { gg.GameId, gg.GenreId });
 
         builder.HasOne(gg => gg.Game)
