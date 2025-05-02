@@ -17,6 +17,5 @@ public class PlatformConfiguration : IEntityTypeConfiguration<Platform>
         builder.HasMany(p => p.GamePlatforms)
             .WithOne(gp => gp.Platform)
             .HasForeignKey(gp => gp.PlatformId);
-
     }
 }
